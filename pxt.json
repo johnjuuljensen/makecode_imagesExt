@@ -6,7 +6,9 @@
     },
     "files": [
         "README.md",
-        "imagesExt.ts"
+        "imagesExt.ts",
+        "images.g.jres",
+        "images.g.ts"
     ],
     "testFiles": [
         "main.blocks",

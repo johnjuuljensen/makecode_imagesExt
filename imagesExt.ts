@@ -1,6 +1,5 @@
 
 //% blockNamespace=images
-//% group=Transformations
 namespace imagesExt {
 
     export enum RotationType {
@@ -12,7 +11,8 @@ namespace imagesExt {
         return (gradient * (j - (size >> 1)));
     }
 
-    //% block="shearX $img by $amount"
+    //% block="shearX $img by $gradient"
+    //% group=Transformations
     //% img.shadow=screen_image_picker
     export function shearX(gradient: number, img: Image): Image {
         let res = image.create(img.width, img.height);
@@ -25,7 +25,8 @@ namespace imagesExt {
         return res;
     }
 
-    //% block="shearY $img by $amount"
+    //% block="shearY $img by $gradient"
+    //% group=Transformations
     //% img.shadow=screen_image_picker
     export function shearY(gradient: number, img: Image): Image {
         let res = image.create(img.width, img.height);
@@ -38,7 +39,8 @@ namespace imagesExt {
         return res;
     }
 
-    //% block="$ShearRotate $img by $degrees degrees"
+    //% block="$rotationType $img by $degrees degrees"
+    //% group=Transformations
     //% img.shadow=screen_image_picker
     export function rotate(rotationType: RotationType, degrees: number, img: Image): Image {
         switch (rotationType) {
