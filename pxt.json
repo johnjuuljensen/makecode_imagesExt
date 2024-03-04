@@ -5,13 +5,13 @@
         "device": "*"
     },
     "files": [
-        "main.blocks",
-        "main.ts",
         "README.md",
-        "assets.json"
+        "imagesExt.ts"
     ],
     "testFiles": [
-        "test.ts"
+        "main.blocks",
+        "main.ts",
+        "assets.json"
     ],
     "targetVersions": {
         "target": "1.12.47",
