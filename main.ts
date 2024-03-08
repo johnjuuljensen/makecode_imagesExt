@@ -18,7 +18,12 @@ controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
 let mySprite: Sprite = null
 let myImage: Image = null
 let rot = 0
+scene.setBackgroundImage(storySprites.world)
 rot = 0
 myImage = assets.image`box`
 mySprite = sprites.create(myImage, SpriteKind.Player)
-controller.moveSprite(mySprite)
+game.onUpdateInterval(500, function () {
+    if (controller.A.isPressed()) {
+        rot += 1
+    }
+})

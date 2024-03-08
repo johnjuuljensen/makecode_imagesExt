@@ -2,6 +2,27 @@
 //% blockNamespace=images
 namespace imagesExt {
 
+    //% blockNamespace=sprites
+    //% block="Set $sprite acceleration to $degrees degrees at force $force"
+    //% group="Physics"
+    export function SetSpriteAccelerationInDegrees(sprite: Sprite, degrees: number, force: number): void {
+        const rad = degrees * Math.PI / 180;
+        sprite.ax = Math.cos(rad) * force;
+        sprite.ay = Math.sin(rad) * force;
+    }
+
+    //% block
+    //% blockNamespace=math
+    export function normalizeDegrees(degrees: number): number {
+        return degrees = degrees - Math.floor((degrees + 180) / 360) * 360;
+    }
+
+    //% block
+    //% blockNamespace=math
+    export function degreesToRadians(degrees: number): number {
+        return degrees * Math.PI / 180;
+    }
+
     export enum RotationType {
         ShearRotate = 0,
         ShearRotate2 = 1
@@ -84,9 +105,8 @@ namespace imagesExt {
         let res = image.create(img.width, img.height);
 
         // reverse angle because we're mapping backwards
-        degrees = -degrees;
         // normalize angle to -180:180
-        degrees = degrees - Math.floor((degrees + 180) / 360) * 360;
+        degrees = normalizeDegrees(-degrees);
         if (degrees < -90 || 90 < degrees) {
             img = img.clone();
             img.flipX();
@@ -95,7 +115,7 @@ namespace imagesExt {
             degrees = degrees - 180;
         }
 
-        const rad = degrees * Math.PI / 180;
+        const rad = degreesToRadians(degrees);
         const t = -Math.tan(rad / 2);
         const s = Math.sin(rad);
 
@@ -118,7 +138,7 @@ namespace imagesExt {
 
     // Same as above, but performs three actual shearing operations.
     function shearRotate2(degrees: number, img: Image): Image {
-        degrees = degrees - Math.floor((degrees + 180) / 360) * 360;
+        degrees = normalizeDegrees(degrees);
         if (degrees < -90 || 90 < degrees) {
             img = img.clone();
             img.flipX();
@@ -131,7 +151,7 @@ namespace imagesExt {
             return img.rotated(90);
         }
 
-        const rad = degrees * Math.PI / 180;
+        const rad = degreesToRadians(degrees);
         const t = -Math.tan(rad / 2);
         const s = Math.sin(rad);
         img = shearX(t, img);
