@@ -2,6 +2,38 @@
 //% blockNamespace=images
 namespace imagesExt {
 
+    //% blockNamespace=controller
+    //% block="Move $sprite angular | $maxSpeed max speed $reverseSpeed reverse speed $turnSpeed turn speed $turnAcc turn acceleration"
+    export function moveSpriteAngular(sprite: Sprite, originalImage: Image, maxSpeed: number, reverseSpeed: number, turnSpeed: number, turnAcc: number): void {
+        let rotAcc = 0;
+        let rot = 0;
+        game.currentScene().eventContext.registerFrameHandler(scene.CONTROLLER_PRIORITY + 1, () => {
+            const ctx = control.eventContext();
+            const l = controller.left.isPressed();
+            const r = controller.right.isPressed();
+            rotAcc +=
+                 l && !r ? -turnAcc*ctx.deltaTime :
+                !l && r ? turnAcc * ctx.deltaTime :
+                Math.abs(rotAcc) < 1 ? -rotAcc :
+                -Math.sign(rotAcc)*turnAcc*0.5*ctx.deltaTime;
+        
+            rotAcc = Math.constrain(rotAcc, -turnSpeed, turnSpeed);
+            rot = imagesExt.normalizeDegrees(rot + rotAcc);
+            sprite.setImage(imagesExt.rotate(imagesExt.RotationType.ShearRotate, rot, originalImage));
+    
+            const dir = Math.atan2(sprite.vy, sprite.vx);
+            const vel = Math.sqrt(sprite.vx * sprite.vx + sprite.vy * sprite.vy);
+            const accScale = 2 - Math.cos(dir - imagesExt.degreesToRadians(rot));
+            const acc =
+                controller.up.isPressed() ? maxSpeed * accScale - vel : 
+                controller.down.isPressed() ? -reverseSpeed : 
+                0;
+        
+            imagesExt.SetSpriteAccelerationInDegrees(sprite, rot, acc);
+            //sprite.sayText(rotAcc);
+        });
+    }    
+
     //% blockNamespace=sprites
     //% block="Set $sprite acceleration to $degrees degrees at force $force"
     //% group="Physics"
