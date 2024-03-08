@@ -3,8 +3,20 @@
 namespace imagesExt {
 
     //% blockNamespace=controller
-    //% block="Move $sprite angular | $maxSpeed max speed $reverseSpeed reverse speed $turnSpeed turn speed $turnAcc turn acceleration"
-    export function moveSpriteAngular(sprite: Sprite, originalImage: Image, maxSpeed: number, reverseSpeed: number, turnSpeed: number, turnAcc: number): void {
+    //% group="Single Player"
+    //% block="Move $sprite=variables_get(mySprite) with angular buttons using $originalImage || with max speed $maxSpeed reverse speed $reverseSpeed turn speed $turnSpeed and turn acceleration $turnAcc"
+    //% inlineInputMode=inline
+    //% expandableArgumentMode="toggle"
+    //% originalImage.shadow=screen_image_picker
+    //% maxSpeed.defl=100 maxSpeed.min=1 maxSpeed.max=300
+    //% reverseSpeed.defl=10 reverseSpeed.min=0 reverseSpeed.max=100
+    //% turnSpeed.defl=10  turnSpeed.min=1 turnSpeed.max=90
+    //% turnAcc=90 turnAcc.min=1 turnAcc.max=180
+    export function moveSpriteAngular(sprite: Sprite, originalImage: Image, maxSpeed?: number, reverseSpeed?: number, turnSpeed?: number, turnAcc?: number): void {
+        maxSpeed = maxSpeed || 100;
+        reverseSpeed = reverseSpeed || 10;
+        turnSpeed = turnSpeed || 10;
+        turnAcc = turnAcc || 90;
         let rotAcc = 0;
         let rot = 0;
         game.currentScene().eventContext.registerFrameHandler(scene.CONTROLLER_PRIORITY + 1, () => {
