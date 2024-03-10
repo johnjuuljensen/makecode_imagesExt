@@ -4,20 +4,22 @@ namespace imagesExt {
 
     //% blockNamespace=controller
     //% group="Single Player"
-    //% block="Move $sprite=variables_get(mySprite) with angular buttons using $originalImage starting at $startAngle degrees || with original image angle $imageAngle max speed $maxSpeed reverse speed $reverseSpeed turn speed $turnSpeed and turn acceleration $turnAcc"
+    //% block="Move/rotate $sprite=variables_get(mySprite) with buttons using $originalImage at angle $imageAngle || starting at $startAngle degrees with original image max speed $maxSpeed reverse speed $reverseSpeed turn speed $turnSpeed and turn acceleration $turnAcc"
     //% inlineInputMode=inline
     //% expandableArgumentMode="toggle"
     //% originalImage.shadow=screen_image_picker
+    //% startAngle=0 startAngle.min=-180 turnAcc.max=180
+    //% imageAngle=0 imageAngle.min=-180 imageAngle.max=180
     //% maxSpeed.defl=100 maxSpeed.min=1 maxSpeed.max=300
     //% reverseSpeed.defl=10 reverseSpeed.min=0 reverseSpeed.max=100
     //% turnSpeed.defl=10  turnSpeed.min=1 turnSpeed.max=90
     //% turnAcc=90 turnAcc.min=1 turnAcc.max=180
-    export function moveSpriteAngular(sprite: Sprite, originalImage: Image, startAngle: number, imageAngle?: number, maxSpeed?: number, reverseSpeed?: number, turnSpeed?: number, turnAcc?: number): void {
+    export function moveSpriteAngular(sprite: Sprite, originalImage: Image, imageAngle: number, startAngle?: number, maxSpeed?: number, reverseSpeed?: number, turnSpeed?: number, turnAcc?: number): void {
         maxSpeed = maxSpeed || 100;
         reverseSpeed = reverseSpeed || 10;
         turnSpeed = turnSpeed || 10;
         turnAcc = turnAcc || 90;
-        imageAngle = imageAngle || 0;
+        startAngle = startAngle || 0;
         let rotAcc = 0;
         let rot =  startAngle;
         game.currentScene().eventContext.registerFrameHandler(scene.CONTROLLER_PRIORITY + 1, () => {
@@ -43,7 +45,7 @@ namespace imagesExt {
                 0;
         
             imagesExt.SetSpriteAccelerationInDegrees(sprite, rot, acc);
-            sprite.sayText(rot);
+            //sprite.sayText(rot);
         });
     }    
 
