@@ -7,4 +7,4 @@ mySprite.setBounceOnWall(false)
 mySprite.setStayInScreen(true)
 mySprite.fx = 10
 mySprite.fy = 10
-imagesExt.moveSpriteAngular(mySprite, assets.image`box`)
+imagesExt.moveSpriteAngular(mySprite, assets.image`box`, -90, -90)

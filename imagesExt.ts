@@ -4,7 +4,7 @@ namespace imagesExt {
 
     //% blockNamespace=controller
     //% group="Single Player"
-    //% block="Move $sprite=variables_get(mySprite) with angular buttons using $originalImage || with max speed $maxSpeed reverse speed $reverseSpeed turn speed $turnSpeed and turn acceleration $turnAcc"
+    //% block="Move $sprite=variables_get(mySprite) with angular buttons using $originalImage starting at $startAngle degrees || with original image angle $imageAngle max speed $maxSpeed reverse speed $reverseSpeed turn speed $turnSpeed and turn acceleration $turnAcc"
     //% inlineInputMode=inline
     //% expandableArgumentMode="toggle"
     //% originalImage.shadow=screen_image_picker
@@ -12,13 +12,14 @@ namespace imagesExt {
     //% reverseSpeed.defl=10 reverseSpeed.min=0 reverseSpeed.max=100
     //% turnSpeed.defl=10  turnSpeed.min=1 turnSpeed.max=90
     //% turnAcc=90 turnAcc.min=1 turnAcc.max=180
-    export function moveSpriteAngular(sprite: Sprite, originalImage: Image, maxSpeed?: number, reverseSpeed?: number, turnSpeed?: number, turnAcc?: number): void {
+    export function moveSpriteAngular(sprite: Sprite, originalImage: Image, startAngle: number, imageAngle?: number, maxSpeed?: number, reverseSpeed?: number, turnSpeed?: number, turnAcc?: number): void {
         maxSpeed = maxSpeed || 100;
         reverseSpeed = reverseSpeed || 10;
         turnSpeed = turnSpeed || 10;
         turnAcc = turnAcc || 90;
+        imageAngle = imageAngle || 0;
         let rotAcc = 0;
-        let rot = 0;
+        let rot =  startAngle;
         game.currentScene().eventContext.registerFrameHandler(scene.CONTROLLER_PRIORITY + 1, () => {
             const ctx = control.eventContext();
             const l = controller.left.isPressed();
@@ -31,7 +32,7 @@ namespace imagesExt {
         
             rotAcc = Math.constrain(rotAcc, -turnSpeed, turnSpeed);
             rot = imagesExt.normalizeDegrees(rot + rotAcc);
-            sprite.setImage(imagesExt.rotate(imagesExt.RotationType.ShearRotate, rot, originalImage));
+            sprite.setImage(imagesExt.rotate(imagesExt.RotationType.ShearRotate, rot - imageAngle, originalImage));
     
             const dir = Math.atan2(sprite.vy, sprite.vx);
             const vel = Math.sqrt(sprite.vx * sprite.vx + sprite.vy * sprite.vy);
@@ -42,7 +43,7 @@ namespace imagesExt {
                 0;
         
             imagesExt.SetSpriteAccelerationInDegrees(sprite, rot, acc);
-            //sprite.sayText(rotAcc);
+            sprite.sayText(rot);
         });
     }    
 
