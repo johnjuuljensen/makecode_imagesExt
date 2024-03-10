@@ -1,8 +1,6 @@
-let mySprite: Sprite = null
-let myImage: Image = null
 scene.setBackgroundImage(storySprites.world)
-myImage = assets.image`box`
-mySprite = sprites.create(myImage, SpriteKind.Player)
+let myImage = assets.image`box`
+let mySprite = sprites.create(myImage, SpriteKind.Player)
 mySprite.setBounceOnWall(false)
 mySprite.setStayInScreen(true)
 mySprite.fx = 10
