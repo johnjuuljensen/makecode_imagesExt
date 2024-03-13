@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.49/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.4","target":"arcade","targetVersion":"1.12.49","repo":"johnjuuljensen/makecode_imagesext"}
-// total=1336315 new=10.21% cached=84.41% other=5.38%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v1.12.49/---simulator","cdnUrl":"https://pxt.azureedge.net","version":"0.0.5","target":"arcade","targetVersion":"1.12.49","repo":"johnjuuljensen/makecode_imagesext"}
+// total=1336316 new=10.21% cached=84.41% other=5.38%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -432,7 +432,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P56382(s) {
+function _main___P75076(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -868,40 +868,40 @@ switch (step) {
     s.callLocIdx = 110; s.pc = 42; return s.tmp_0;
   case 42:
     r0 = s.retval;
-    globals.myImage___41997 = (r0);
+    globals.myImage___74914 = (r0);
     s.tmp_0 = sprites_create__P39929_mk(s);
-    s.tmp_0.arg0 = globals.myImage___41997;
+    s.tmp_0.arg0 = globals.myImage___74914;
     s.tmp_0.arg1 = globals.Player___40134;
     s.callLocIdx = 111; s.pc = 43; return s.tmp_0;
   case 43:
     r0 = s.retval;
-    globals.mySprite___41998 = (r0);
+    globals.mySprite___74917 = (r0);
     s.tmp_0 = Sprite_setBounceOnWall__P40072_mk(s);
-    s.tmp_0.arg0 = globals.mySprite___41998;
+    s.tmp_0.arg0 = globals.mySprite___74917;
     s.tmp_0.arg1 = false;
     s.callLocIdx = 112; s.pc = 44; return s.tmp_0;
   case 44:
     r0 = s.retval;
     s.tmp_0 = Sprite_setStayInScreen__P40071_mk(s);
-    s.tmp_0.arg0 = globals.mySprite___41998;
+    s.tmp_0.arg0 = globals.mySprite___74917;
     s.tmp_0.arg1 = true;
     s.callLocIdx = 113; s.pc = 45; return s.tmp_0;
   case 45:
     r0 = s.retval;
     s.tmp_0 = Sprite_fx__P40021_mk(s);
-    s.tmp_0.arg0 = globals.mySprite___41998;
+    s.tmp_0.arg0 = globals.mySprite___74917;
     s.tmp_0.arg1 = 10;
     s.callLocIdx = 114; s.pc = 46; return s.tmp_0;
   case 46:
     r0 = s.retval;
     s.tmp_0 = Sprite_fy__P40023_mk(s);
-    s.tmp_0.arg0 = globals.mySprite___41998;
+    s.tmp_0.arg0 = globals.mySprite___74917;
     s.tmp_0.arg1 = 10;
     s.callLocIdx = 115; s.pc = 47; return s.tmp_0;
   case 47:
     r0 = s.retval;
-    s.tmp_0 = imagesExt_moveSpriteAngular__P41986_mk(s);
-    s.tmp_0.arg0 = globals.mySprite___41998;
+    s.tmp_0 = imagesExt_moveSpriteAngular__P73848_mk(s);
+    s.tmp_0.arg0 = globals.mySprite___74917;
     s.tmp_1 = helpers_getImageByName__P40990_mk(s);
     s.tmp_1.arg0 = "box";
     s.callLocIdx = 116; s.pc = 49; return s.tmp_1;
@@ -913,7 +913,7 @@ switch (step) {
     s.tmp_0.arg4 = 100;
     s.tmp_0.arg5 = 10;
     s.tmp_0.arg6 = 10;
-    s.tmp_0.arg7 = 0;
+    s.tmp_0.arg7 = 90;
     s.callLocIdx = 117; s.pc = 48; return s.tmp_0;
   case 48:
     r0 = s.retval;
@@ -921,13 +921,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P56382.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P56382.continuations = [  ]
+_main___P75076.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P75076.continuations = [  ]
 
-function _main___P56382_mk(s) {
+function _main___P75076_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P56382, depth: s.depth + 1,
+        parent: s, fn: _main___P75076, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1646,7 +1646,7 @@ function myTiles_inline__P45151_mk(s) {
 
 
 
-function imagesExt_moveSpriteAngular__P41986(s) {
+function imagesExt_moveSpriteAngular__P73848(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1656,8 +1656,8 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.rotAcc___44650 = undefined;
-    s.rot___44651 = undefined;
+    s.rotAcc___73872 = undefined;
+    s.rot___73873 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -1745,17 +1745,17 @@ switch (step) {
     s.tmp_1 = r0;
     s.arg3 = (s.tmp_1);
     r0 = pxsim_pxtrt.mklocRef();
-    s.rotAcc___44650 = (r0);
-    r0 = pxsim_pxtrt_stlocRef(s.rotAcc___44650, 0);
+    s.rotAcc___73872 = (r0);
+    r0 = pxsim_pxtrt_stlocRef(s.rotAcc___73872, 0);
     r0 = pxsim_pxtrt.mklocRef();
-    s.rot___44651 = (r0);
-    r0 = pxsim_pxtrt_stlocRef(s.rot___44651, s.arg3);
-    r0 = pxsim_pxtcore_mkAction(9, imagesExt_moveSpriteAngular_inline__P44660);
+    s.rot___73873 = (r0);
+    r0 = pxsim_pxtrt_stlocRef(s.rot___73873, s.arg3);
+    r0 = pxsim_pxtcore_mkAction(9, imagesExt_moveSpriteAngular_inline__P73882);
     s.tmp_0 = r0;
     r0 = pxsim_pxtrt_stclo(s.tmp_0, 0, s.arg7);
-    r0 = pxsim_pxtrt_stclo(s.tmp_0, 1, s.rotAcc___44650);
+    r0 = pxsim_pxtrt_stclo(s.tmp_0, 1, s.rotAcc___73872);
     r0 = pxsim_pxtrt_stclo(s.tmp_0, 2, s.arg6);
-    r0 = pxsim_pxtrt_stclo(s.tmp_0, 3, s.rot___44651);
+    r0 = pxsim_pxtrt_stclo(s.tmp_0, 3, s.rot___73873);
     r0 = pxsim_pxtrt_stclo(s.tmp_0, 4, s.arg0);
     r0 = pxsim_pxtrt_stclo(s.tmp_0, 5, s.arg2);
     r0 = pxsim_pxtrt_stclo(s.tmp_0, 6, s.arg1);
@@ -1777,12 +1777,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_moveSpriteAngular__P41986.info = {"start":862,"length":1724,"line":16,"column":4,"endLine":49,"endColumn":5,"fileName":"imagesExt.ts","functionName":"moveSpriteAngular","argumentNames":["sprite","originalImage","imageAngle","startAngle","maxSpeed","reverseSpeed","turnSpeed","turnAcc"]}
+imagesExt_moveSpriteAngular__P73848.info = {"start":814,"length":1724,"line":15,"column":4,"endLine":48,"endColumn":5,"fileName":"imagesExt.ts","functionName":"moveSpriteAngular","argumentNames":["sprite","originalImage","imageAngle","startAngle","maxSpeed","reverseSpeed","turnSpeed","turnAcc"]}
 
-function imagesExt_moveSpriteAngular__P41986_mk(s) {
+function imagesExt_moveSpriteAngular__P73848_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_moveSpriteAngular__P41986, depth: s.depth + 1,
+        parent: s, fn: imagesExt_moveSpriteAngular__P73848, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1790,8 +1790,8 @@ function imagesExt_moveSpriteAngular__P41986_mk(s) {
   tmp_3: undefined,
   tmp_4: undefined,
   tmp_5: undefined,
-  rotAcc___44650: undefined,
-  rot___44651: undefined,
+  rotAcc___73872: undefined,
+  rot___73873: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
@@ -1806,7 +1806,7 @@ function imagesExt_moveSpriteAngular__P41986_mk(s) {
 
 
 
-function imagesExt_moveSpriteAngular_inline__P44660(s) {
+function imagesExt_moveSpriteAngular_inline__P73882(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1816,18 +1816,18 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.ctx___44661 = undefined;
-    s.l___44664 = undefined;
-    s.r___44668 = undefined;
-    s.dir___44728 = undefined;
-    s.vel___44735 = undefined;
-    s.accScale___44749 = undefined;
-    s.acc___44758 = undefined;
+    s.ctx___73883 = undefined;
+    s.l___73886 = undefined;
+    s.r___73890 = undefined;
+    s.dir___73953 = undefined;
+    s.vel___73960 = undefined;
+    s.accScale___73974 = undefined;
+    s.acc___73984 = undefined;
     s.tmp_0 = control_eventContext__P38062_mk(s);
     s.callLocIdx = 64; s.pc = 15; return s.tmp_0;
   case 15:
     r0 = s.retval;
-    s.ctx___44661 = (r0);
+    s.ctx___73883 = (r0);
     s.tmp_0 = controller_Button__C39843_v0_1_mk(s);
     s.tmp_0.arg0 = globals.left___39769;
     if (!checkSubtype(s.tmp_0.arg0, controller_Button__C39843_VT)) failedCast(s.tmp_0.arg0);
@@ -1835,7 +1835,7 @@ switch (step) {
     s.pc = 16; return s.tmp_0;
   case 16:
     r0 = s.retval;
-    s.l___44664 = (r0);
+    s.l___73886 = (r0);
     s.tmp_0 = controller_Button__C39843_v0_1_mk(s);
     s.tmp_0.arg0 = globals.right___39771;
     if (!checkSubtype(s.tmp_0.arg0, controller_Button__C39843_VT)) failedCast(s.tmp_0.arg0);
@@ -1843,14 +1843,14 @@ switch (step) {
     s.pc = 17; return s.tmp_0;
   case 17:
     r0 = s.retval;
-    s.r___44668 = (r0);
-    s.tmp_0 = r0 = s.l___44664;
+    s.r___73890 = (r0);
+    s.tmp_0 = r0 = s.l___73886;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (r0) { step = 1; continue; }
     r0 = s.tmp_0;
     { step = 2; continue; }
   case 1:
-    r0 = pxsim_numops_toBoolDecr(s.r___44668);
+    r0 = pxsim_numops_toBoolDecr(s.r___73890);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
   case 2:
@@ -1862,14 +1862,14 @@ switch (step) {
     s.tmp_4 = r0;
     r0 = (0 - s.tmp_4);
     s.tmp_3 = r0;
-    r0 = s.ctx___44661.fields["deltaTimeMillis"];
+    r0 = s.ctx___73883.fields["deltaTimeMillis"];
     s.tmp_6 = r0;
     r0 = (s.tmp_6 / 1000);
     s.tmp_5 = r0;
     r0 = (s.tmp_3 * s.tmp_5);
     { step = 10; continue; }
   case 3:
-    r0 = pxsim_numops_toBoolDecr(s.l___44664);
+    r0 = pxsim_numops_toBoolDecr(s.l___73886);
     s.tmp_8 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_8);
     s.tmp_7 = r0;
@@ -1878,7 +1878,7 @@ switch (step) {
     r0 = s.tmp_7;
     { step = 5; continue; }
   case 4:
-    r0 = s.r___44668;
+    r0 = s.r___73890;
   case 5:
     // jmp value (already in r0)
     s.tmp_9 = r0;
@@ -1886,7 +1886,7 @@ switch (step) {
     if (!r0) { step = 6; continue; }
     r0 = pxsim_pxtrt_ldlocRef(s.caps[0]);
     s.tmp_10 = r0;
-    r0 = s.ctx___44661.fields["deltaTimeMillis"];
+    r0 = s.ctx___73883.fields["deltaTimeMillis"];
     s.tmp_12 = r0;
     r0 = (s.tmp_12 / 1000);
     s.tmp_11 = r0;
@@ -1924,7 +1924,7 @@ switch (step) {
     s.tmp_18 = r0;
     r0 = (s.tmp_18 * 0.5);
     s.tmp_17 = r0;
-    r0 = s.ctx___44661.fields["deltaTimeMillis"];
+    r0 = s.ctx___73883.fields["deltaTimeMillis"];
     s.tmp_24 = r0;
     r0 = (s.tmp_24 / 1000);
     s.tmp_23 = r0;
@@ -1962,7 +1962,7 @@ switch (step) {
     s.tmp_1 = r0;
     r0 = pxsim_pxtrt_stlocRef(s.tmp_0, s.tmp_1);
     s.tmp_0 = r0 = s.caps[3];
-    s.tmp_2 = imagesExt_normalizeDegrees__P41988_mk(s);
+    s.tmp_2 = imagesExt_normalizeDegrees__P73939_mk(s);
     r0 = pxsim_pxtrt_ldlocRef(s.caps[3]);
     s.tmp_3 = r0;
     r0 = pxsim_pxtrt_ldlocRef(s.caps[1]);
@@ -1976,7 +1976,7 @@ switch (step) {
     r0 = pxsim_pxtrt_stlocRef(s.tmp_0, s.tmp_1);
     s.tmp_0 = Sprite_setImage__P40045_mk(s);
     s.tmp_0.arg0 = s.caps[4];
-    s.tmp_1 = imagesExt_rotate__P41996_mk(s);
+    s.tmp_1 = imagesExt_rotate__P73946_mk(s);
     s.tmp_1.arg0 = 0;
     r0 = pxsim_pxtrt_ldlocRef(s.caps[3]);
     s.tmp_2 = r0;
@@ -2003,7 +2003,7 @@ switch (step) {
     r0 = s.retval;
     s.tmp_2 = r0;
     r0 = pxsim.Math_.atan2(s.tmp_0, s.tmp_2);
-    s.dir___44728 = (r0);
+    s.dir___73953 = (r0);
     s.tmp_3 = Sprite_vx__P40012_mk(s);
     s.tmp_3.arg0 = s.caps[4];
     s.callLocIdx = 76; s.pc = 26; return s.tmp_3;
@@ -2035,8 +2035,8 @@ switch (step) {
     r0 = (s.tmp_1 + s.tmp_6);
     s.tmp_0 = r0;
     r0 = pxsim.Math_.sqrt(s.tmp_0);
-    s.vel___44735 = (r0);
-    s.tmp_2 = r0 = s.dir___44728;
+    s.vel___73960 = (r0);
+    s.tmp_2 = r0 = s.dir___73953;
     r0 = pxsim_pxtrt_ldlocRef(s.caps[3]);
     s.tmp_4 = r0;
     r0 = (s.tmp_4 * 3.141592653589793);
@@ -2048,7 +2048,7 @@ switch (step) {
     r0 = pxsim.Math_.cos(s.tmp_1);
     s.tmp_0 = r0;
     r0 = (2 - s.tmp_0);
-    s.accScale___44749 = (r0);
+    s.accScale___73974 = (r0);
     s.tmp_1 = controller_Button__C39843_v0_1_mk(s);
     s.tmp_1.arg0 = globals.up___39770;
     if (!checkSubtype(s.tmp_1.arg0, controller_Button__C39843_VT)) failedCast(s.tmp_1.arg0);
@@ -2061,9 +2061,9 @@ switch (step) {
     if (!r0) { step = 11; continue; }
     r0 = pxsim_pxtrt_ldlocRef(s.caps[7]);
     s.tmp_3 = r0;
-    r0 = (s.tmp_3 * s.accScale___44749);
+    r0 = (s.tmp_3 * s.accScale___73974);
     s.tmp_2 = r0;
-    r0 = (s.tmp_2 - s.vel___44735);
+    r0 = (s.tmp_2 - s.vel___73960);
     { step = 14; continue; }
   case 11:
     s.tmp_5 = controller_Button__C39843_v0_1_mk(s);
@@ -2089,12 +2089,12 @@ switch (step) {
   case 14:
     // jmp value (already in r0)
     s.tmp_8 = r0;
-    s.acc___44758 = (s.tmp_8);
-    s.tmp_0 = imagesExt_SetSpriteAccelerationInDegrees__P41987_mk(s);
+    s.acc___73984 = (s.tmp_8);
+    s.tmp_0 = imagesExt_SetSpriteAccelerationInDegrees__P73998_mk(s);
     s.tmp_0.arg0 = s.caps[4];
     r0 = pxsim_pxtrt_ldlocRef(s.caps[3]);
     s.tmp_0.arg1 = r0;
-    s.tmp_0.arg2 = s.acc___44758;
+    s.tmp_0.arg2 = s.acc___73984;
     s.callLocIdx = 81; s.pc = 32; return s.tmp_0;
   case 32:
     r0 = s.retval;
@@ -2102,12 +2102,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_moveSpriteAngular_inline__P44660.info = {"start":1398,"length":1180,"line":24,"column":93,"endLine":48,"endColumn":9,"fileName":"imagesExt.ts","functionName":"inline","argumentNames":[]}
+imagesExt_moveSpriteAngular_inline__P73882.info = {"start":1350,"length":1180,"line":23,"column":93,"endLine":47,"endColumn":9,"fileName":"imagesExt.ts","functionName":"inline","argumentNames":[]}
 
-function imagesExt_moveSpriteAngular_inline__P44660_mk(s) {
+function imagesExt_moveSpriteAngular_inline__P73882_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_moveSpriteAngular_inline__P44660, depth: s.depth + 1,
+        parent: s, fn: imagesExt_moveSpriteAngular_inline__P73882, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2140,20 +2140,20 @@ function imagesExt_moveSpriteAngular_inline__P44660_mk(s) {
   tmp_28: undefined,
   tmp_29: undefined,
   tmp_30: undefined,
-  ctx___44661: undefined,
-  l___44664: undefined,
-  r___44668: undefined,
-  dir___44728: undefined,
-  vel___44735: undefined,
-  accScale___44749: undefined,
-  acc___44758: undefined,
+  ctx___73883: undefined,
+  l___73886: undefined,
+  r___73890: undefined,
+  dir___73953: undefined,
+  vel___73960: undefined,
+  accScale___73974: undefined,
+  acc___73984: undefined,
 } }
 
 
 
 
 
-function imagesExt_SetSpriteAccelerationInDegrees__P41987(s) {
+function imagesExt_SetSpriteAccelerationInDegrees__P73998(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2163,7 +2163,7 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.rad___44778 = undefined;
+    s.rad___74005 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -2173,10 +2173,10 @@ switch (step) {
     r0 = (s.arg1 * 3.141592653589793);
     s.tmp_0 = r0;
     r0 = (s.tmp_0 / 180);
-    s.rad___44778 = (r0);
+    s.rad___74005 = (r0);
     s.tmp_0 = Sprite_ax__P40017_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    r0 = pxsim.Math_.cos(s.rad___44778);
+    r0 = pxsim.Math_.cos(s.rad___74005);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 * s.arg2);
     s.tmp_0.arg1 = r0;
@@ -2185,7 +2185,7 @@ switch (step) {
     r0 = s.retval;
     s.tmp_0 = Sprite_ay__P40019_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    r0 = pxsim.Math_.sin(s.rad___44778);
+    r0 = pxsim.Math_.sin(s.rad___74005);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 * s.arg2);
     s.tmp_0.arg1 = r0;
@@ -2196,16 +2196,16 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_SetSpriteAccelerationInDegrees__P41987.info = {"start":2728,"length":239,"line":54,"column":4,"endLine":58,"endColumn":5,"fileName":"imagesExt.ts","functionName":"SetSpriteAccelerationInDegrees","argumentNames":["sprite","degrees","force"]}
+imagesExt_SetSpriteAccelerationInDegrees__P73998.info = {"start":2680,"length":239,"line":53,"column":4,"endLine":57,"endColumn":5,"fileName":"imagesExt.ts","functionName":"SetSpriteAccelerationInDegrees","argumentNames":["sprite","degrees","force"]}
 
-function imagesExt_SetSpriteAccelerationInDegrees__P41987_mk(s) {
+function imagesExt_SetSpriteAccelerationInDegrees__P73998_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_SetSpriteAccelerationInDegrees__P41987, depth: s.depth + 1,
+        parent: s, fn: imagesExt_SetSpriteAccelerationInDegrees__P73998, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
-  rad___44778: undefined,
+  rad___74005: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
@@ -2413,7 +2413,7 @@ function Sprite_ax__P40016_mk(s) {
 
 
 
-function imagesExt_degreesToRadians__P41989(s) {
+function imagesExt_degreesToRadians__P73982(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2433,12 +2433,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_degreesToRadians__P41989.info = {"start":3204,"length":105,"line":68,"column":4,"endLine":70,"endColumn":5,"fileName":"imagesExt.ts","functionName":"degreesToRadians","argumentNames":["degrees"]}
+imagesExt_degreesToRadians__P73982.info = {"start":3156,"length":105,"line":67,"column":4,"endLine":69,"endColumn":5,"fileName":"imagesExt.ts","functionName":"degreesToRadians","argumentNames":["degrees"]}
 
-function imagesExt_degreesToRadians__P41989_mk(s) {
+function imagesExt_degreesToRadians__P73982_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_degreesToRadians__P41989, depth: s.depth + 1,
+        parent: s, fn: imagesExt_degreesToRadians__P73982, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   arg0: undefined,
@@ -2524,7 +2524,7 @@ function Sprite_vy__P40014_mk(s) {
 
 
 
-function imagesExt_rotate__P41996(s) {
+function imagesExt_rotate__P73946(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2548,7 +2548,7 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 3; continue; }
   case 1:
-    s.tmp_1 = imagesExt_shearRotate__P44933_mk(s);
+    s.tmp_1 = imagesExt_shearRotate__P74164_mk(s);
     s.tmp_1.arg0 = s.arg1;
     s.tmp_1.arg1 = s.arg2;
     s.callLocIdx = 87; s.pc = 5; return s.tmp_1;
@@ -2556,7 +2556,7 @@ switch (step) {
     r0 = s.retval;
     { step = 4; continue; }
   case 2:
-    s.tmp_2 = imagesExt_shearRotate2__P44937_mk(s);
+    s.tmp_2 = imagesExt_shearRotate2__P74168_mk(s);
     s.tmp_2.arg0 = s.arg1;
     s.tmp_2.arg1 = s.arg2;
     s.callLocIdx = 88; s.pc = 6; return s.tmp_2;
@@ -2569,12 +2569,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_rotate__P41996.info = {"start":4706,"length":292,"line":112,"column":4,"endLine":117,"endColumn":5,"fileName":"imagesExt.ts","functionName":"rotate","argumentNames":["rotationType","degrees","img"]}
+imagesExt_rotate__P73946.info = {"start":4658,"length":292,"line":111,"column":4,"endLine":116,"endColumn":5,"fileName":"imagesExt.ts","functionName":"rotate","argumentNames":["rotationType","degrees","img"]}
 
-function imagesExt_rotate__P41996_mk(s) {
+function imagesExt_rotate__P73946_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_rotate__P41996, depth: s.depth + 1,
+        parent: s, fn: imagesExt_rotate__P73946, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2588,7 +2588,7 @@ function imagesExt_rotate__P41996_mk(s) {
 
 
 
-function imagesExt_shearRotate2__P44937(s) {
+function imagesExt_shearRotate2__P74168(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2598,15 +2598,15 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.rad___45096 = undefined;
-    s.t___45100 = undefined;
-    s.s___45106 = undefined;
+    s.rad___74327 = undefined;
+    s.t___74331 = undefined;
+    s.s___74337 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = imagesExt_normalizeDegrees__P41988_mk(s);
+    s.tmp_0 = imagesExt_normalizeDegrees__P73939_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 94; s.pc = 10; return s.tmp_0;
   case 10:
@@ -2664,31 +2664,31 @@ switch (step) {
     r0 = (s.arg0 * 3.141592653589793);
     s.tmp_4 = r0;
     r0 = (s.tmp_4 / 180);
-    s.rad___45096 = (r0);
-    r0 = (s.rad___45096 / 2);
+    s.rad___74327 = (r0);
+    r0 = (s.rad___74327 / 2);
     s.tmp_1 = r0;
     r0 = pxsim.Math_.tan(s.tmp_1);
     s.tmp_0 = r0;
     r0 = (0 - s.tmp_0);
-    s.t___45100 = (r0);
-    r0 = pxsim.Math_.sin(s.rad___45096);
-    s.s___45106 = (r0);
-    s.tmp_0 = imagesExt_shearX__P41994_mk(s);
-    s.tmp_0.arg0 = s.t___45100;
+    s.t___74331 = (r0);
+    r0 = pxsim.Math_.sin(s.rad___74327);
+    s.s___74337 = (r0);
+    s.tmp_0 = imagesExt_shearX__P74051_mk(s);
+    s.tmp_0.arg0 = s.t___74331;
     s.tmp_0.arg1 = s.arg1;
     s.callLocIdx = 98; s.pc = 13; return s.tmp_0;
   case 13:
     r0 = s.retval;
     s.arg1 = (r0);
-    s.tmp_0 = imagesExt_shearY__P41995_mk(s);
-    s.tmp_0.arg0 = s.s___45106;
+    s.tmp_0 = imagesExt_shearY__P74103_mk(s);
+    s.tmp_0.arg0 = s.s___74337;
     s.tmp_0.arg1 = s.arg1;
     s.callLocIdx = 99; s.pc = 14; return s.tmp_0;
   case 14:
     r0 = s.retval;
     s.arg1 = (r0);
-    s.tmp_0 = imagesExt_shearX__P41994_mk(s);
-    s.tmp_0.arg0 = s.t___45100;
+    s.tmp_0 = imagesExt_shearX__P74051_mk(s);
+    s.tmp_0.arg0 = s.t___74331;
     s.tmp_0.arg1 = s.arg1;
     s.callLocIdx = 100; s.pc = 15; return s.tmp_0;
   case 15:
@@ -2699,21 +2699,21 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_shearRotate2__P44937.info = {"start":7436,"length":659,"line":186,"column":4,"endLine":207,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearRotate2","argumentNames":["degrees","img"]}
+imagesExt_shearRotate2__P74168.info = {"start":7388,"length":659,"line":185,"column":4,"endLine":206,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearRotate2","argumentNames":["degrees","img"]}
 
-function imagesExt_shearRotate2__P44937_mk(s) {
+function imagesExt_shearRotate2__P74168_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_shearRotate2__P44937, depth: s.depth + 1,
+        parent: s, fn: imagesExt_shearRotate2__P74168, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
   tmp_4: undefined,
-  rad___45096: undefined,
-  t___45100: undefined,
-  s___45106: undefined,
+  rad___74327: undefined,
+  t___74331: undefined,
+  s___74337: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -2722,7 +2722,7 @@ function imagesExt_shearRotate2__P44937_mk(s) {
 
 
 
-function imagesExt_shearY__P41995(s) {
+function imagesExt_shearY__P74103(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2732,10 +2732,10 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.res___44876 = undefined;
-    s.x___44883 = undefined;
-    s.offset___44889 = undefined;
-    s.y___44900 = undefined;
+    s.res___74106 = undefined;
+    s.x___74113 = undefined;
+    s.offset___74119 = undefined;
+    s.y___74130 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -2746,10 +2746,10 @@ switch (step) {
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_1 = r0;
     r0 = pxsim.image.create(s.tmp_0, s.tmp_1);
-    s.res___44876 = (r0);
-    s.x___44883 = (0);
+    s.res___74106 = (r0);
+    s.x___74113 = (0);
   case 1:
-    s.tmp_1 = r0 = s.x___44883;
+    s.tmp_1 = r0 = s.x___74113;
     r0 = pxsim_ImageMethods.width(s.arg1);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -2757,7 +2757,7 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
     s.tmp_4 = r0 = s.arg0;
-    r0 = (s.x___44883 + 0.5);
+    r0 = (s.x___74113 + 0.5);
     s.tmp_5 = r0;
     r0 = pxsim_ImageMethods.width(s.arg1);
     s.tmp_6 = r0;
@@ -2768,41 +2768,41 @@ switch (step) {
     r0 = (s.tmp_4 * s.tmp_7);
     s.tmp_3 = r0;
     r0 = pxsim.Math_.round(s.tmp_3);
-    s.offset___44889 = (r0);
-    s.y___44900 = (0);
+    s.offset___74119 = (r0);
+    s.y___74130 = (0);
   case 2:
-    s.tmp_1 = r0 = s.y___44900;
+    s.tmp_1 = r0 = s.y___74130;
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    s.tmp_3 = r0 = s.res___44876;
-    s.tmp_4 = r0 = s.x___44883;
-    r0 = (s.y___44900 + s.offset___44889);
+    s.tmp_3 = r0 = s.res___74106;
+    s.tmp_4 = r0 = s.x___74113;
+    r0 = (s.y___74130 + s.offset___74119);
     s.tmp_5 = r0;
-    r0 = pxsim_ImageMethods.getPixel(s.arg1, s.x___44883, s.y___44900);
+    r0 = pxsim_ImageMethods.getPixel(s.arg1, s.x___74113, s.y___74130);
     s.tmp_6 = r0;
     r0 = pxsim_ImageMethods.setPixel(s.tmp_3, s.tmp_4, s.tmp_5, s.tmp_6);
-    r0 = (s.y___44900 + 1);
-    s.y___44900 = (r0);
+    r0 = (s.y___74130 + 1);
+    s.y___74130 = (r0);
     { step = 2; continue; }
   case 3:
-    r0 = (s.x___44883 + 1);
-    s.x___44883 = (r0);
+    r0 = (s.x___74113 + 1);
+    s.x___74113 = (r0);
     { step = 1; continue; }
   case 4:
-    r0 = s.res___44876;
+    r0 = s.res___74106;
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_shearY__P41995.info = {"start":4168,"length":408,"line":98,"column":4,"endLine":107,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearY","argumentNames":["gradient","img"]}
+imagesExt_shearY__P74103.info = {"start":4120,"length":408,"line":97,"column":4,"endLine":106,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearY","argumentNames":["gradient","img"]}
 
-function imagesExt_shearY__P41995_mk(s) {
+function imagesExt_shearY__P74103_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_shearY__P41995, depth: s.depth + 1,
+        parent: s, fn: imagesExt_shearY__P74103, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2813,10 +2813,10 @@ function imagesExt_shearY__P41995_mk(s) {
   tmp_6: undefined,
   tmp_7: undefined,
   tmp_8: undefined,
-  res___44876: undefined,
-  x___44883: undefined,
-  offset___44889: undefined,
-  y___44900: undefined,
+  res___74106: undefined,
+  x___74113: undefined,
+  offset___74119: undefined,
+  y___74130: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -2825,7 +2825,7 @@ function imagesExt_shearY__P41995_mk(s) {
 
 
 
-function imagesExt_shearOffset__P41993(s) {
+function imagesExt_shearOffset__P74041(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2851,12 +2851,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_shearOffset__P41993.info = {"start":3403,"length":125,"line":77,"column":4,"endLine":79,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearOffset","argumentNames":["gradient","j","size"]}
+imagesExt_shearOffset__P74041.info = {"start":3355,"length":125,"line":76,"column":4,"endLine":78,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearOffset","argumentNames":["gradient","j","size"]}
 
-function imagesExt_shearOffset__P41993_mk(s) {
+function imagesExt_shearOffset__P74041_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_shearOffset__P41993, depth: s.depth + 1,
+        parent: s, fn: imagesExt_shearOffset__P74041, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2871,7 +2871,7 @@ function imagesExt_shearOffset__P41993_mk(s) {
 
 
 
-function imagesExt_shearX__P41994(s) {
+function imagesExt_shearX__P74051(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2881,10 +2881,10 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.res___44825 = undefined;
-    s.y___44832 = undefined;
-    s.offset___44838 = undefined;
-    s.x___44849 = undefined;
+    s.res___74054 = undefined;
+    s.y___74061 = undefined;
+    s.offset___74067 = undefined;
+    s.x___74078 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -2895,10 +2895,10 @@ switch (step) {
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_1 = r0;
     r0 = pxsim.image.create(s.tmp_0, s.tmp_1);
-    s.res___44825 = (r0);
-    s.y___44832 = (0);
+    s.res___74054 = (r0);
+    s.y___74061 = (0);
   case 1:
-    s.tmp_1 = r0 = s.y___44832;
+    s.tmp_1 = r0 = s.y___74061;
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
@@ -2906,7 +2906,7 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
     s.tmp_4 = r0 = s.arg0;
-    r0 = (s.y___44832 + 0.5);
+    r0 = (s.y___74061 + 0.5);
     s.tmp_5 = r0;
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_6 = r0;
@@ -2917,41 +2917,41 @@ switch (step) {
     r0 = (s.tmp_4 * s.tmp_7);
     s.tmp_3 = r0;
     r0 = pxsim.Math_.round(s.tmp_3);
-    s.offset___44838 = (r0);
-    s.x___44849 = (0);
+    s.offset___74067 = (r0);
+    s.x___74078 = (0);
   case 2:
-    s.tmp_1 = r0 = s.x___44849;
+    s.tmp_1 = r0 = s.x___74078;
     r0 = pxsim_ImageMethods.width(s.arg1);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    s.tmp_3 = r0 = s.res___44825;
-    r0 = (s.x___44849 + s.offset___44838);
+    s.tmp_3 = r0 = s.res___74054;
+    r0 = (s.x___74078 + s.offset___74067);
     s.tmp_4 = r0;
-    s.tmp_5 = r0 = s.y___44832;
-    r0 = pxsim_ImageMethods.getPixel(s.arg1, s.x___44849, s.y___44832);
+    s.tmp_5 = r0 = s.y___74061;
+    r0 = pxsim_ImageMethods.getPixel(s.arg1, s.x___74078, s.y___74061);
     s.tmp_6 = r0;
     r0 = pxsim_ImageMethods.setPixel(s.tmp_3, s.tmp_4, s.tmp_5, s.tmp_6);
-    r0 = (s.x___44849 + 1);
-    s.x___44849 = (r0);
+    r0 = (s.x___74078 + 1);
+    s.x___74078 = (r0);
     { step = 2; continue; }
   case 3:
-    r0 = (s.y___44832 + 1);
-    s.y___44832 = (r0);
+    r0 = (s.y___74061 + 1);
+    s.y___74061 = (r0);
     { step = 1; continue; }
   case 4:
-    r0 = s.res___44825;
+    r0 = s.res___74054;
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_shearX__P41994.info = {"start":3644,"length":408,"line":84,"column":4,"endLine":93,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearX","argumentNames":["gradient","img"]}
+imagesExt_shearX__P74051.info = {"start":3596,"length":408,"line":83,"column":4,"endLine":92,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearX","argumentNames":["gradient","img"]}
 
-function imagesExt_shearX__P41994_mk(s) {
+function imagesExt_shearX__P74051_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_shearX__P41994, depth: s.depth + 1,
+        parent: s, fn: imagesExt_shearX__P74051, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -2962,10 +2962,10 @@ function imagesExt_shearX__P41994_mk(s) {
   tmp_6: undefined,
   tmp_7: undefined,
   tmp_8: undefined,
-  res___44825: undefined,
-  y___44832: undefined,
-  offset___44838: undefined,
-  x___44849: undefined,
+  res___74054: undefined,
+  y___74061: undefined,
+  offset___74067: undefined,
+  x___74078: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -3074,7 +3074,7 @@ function helpers_imageRotated__P39618_mk(s) {
 
 
 
-function imagesExt_shearRotate__P44933(s) {
+function imagesExt_shearRotate__P74164(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -3084,17 +3084,17 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.res___44942 = undefined;
-    s.rad___44974 = undefined;
-    s.t___44978 = undefined;
-    s.s___44984 = undefined;
-    s.x___44988 = undefined;
-    s.y___44994 = undefined;
-    s.ax___45000 = undefined;
-    s.by___45011 = undefined;
-    s.cx___45022 = undefined;
-    s.fx___45033 = undefined;
-    s.fy___45037 = undefined;
+    s.res___74173 = undefined;
+    s.rad___74205 = undefined;
+    s.t___74209 = undefined;
+    s.s___74215 = undefined;
+    s.x___74219 = undefined;
+    s.y___74225 = undefined;
+    s.ax___74231 = undefined;
+    s.by___74242 = undefined;
+    s.cx___74253 = undefined;
+    s.fx___74264 = undefined;
+    s.fy___74268 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -3105,8 +3105,8 @@ switch (step) {
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_1 = r0;
     r0 = pxsim.image.create(s.tmp_0, s.tmp_1);
-    s.res___44942 = (r0);
-    s.tmp_0 = imagesExt_normalizeDegrees__P41988_mk(s);
+    s.res___74173 = (r0);
+    s.tmp_0 = imagesExt_normalizeDegrees__P73939_mk(s);
     r0 = (0 - s.arg0);
     s.tmp_0.arg0 = r0;
     s.callLocIdx = 89; s.pc = 9; return s.tmp_0;
@@ -3137,36 +3137,36 @@ switch (step) {
     r0 = (s.arg0 * 3.141592653589793);
     s.tmp_0 = r0;
     r0 = (s.tmp_0 / 180);
-    s.rad___44974 = (r0);
-    r0 = (s.rad___44974 / 2);
+    s.rad___74205 = (r0);
+    r0 = (s.rad___74205 / 2);
     s.tmp_1 = r0;
     r0 = pxsim.Math_.tan(s.tmp_1);
     s.tmp_0 = r0;
     r0 = (0 - s.tmp_0);
-    s.t___44978 = (r0);
-    r0 = pxsim.Math_.sin(s.rad___44974);
-    s.s___44984 = (r0);
-    s.x___44988 = (0);
+    s.t___74209 = (r0);
+    r0 = pxsim.Math_.sin(s.rad___74205);
+    s.s___74215 = (r0);
+    s.x___74219 = (0);
   case 5:
-    s.tmp_1 = r0 = s.x___44988;
+    s.tmp_1 = r0 = s.x___74219;
     r0 = pxsim_ImageMethods.width(s.arg1);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 8; continue; }
-    s.y___44994 = (0);
+    s.y___74225 = (0);
   case 6:
-    s.tmp_1 = r0 = s.y___44994;
+    s.tmp_1 = r0 = s.y___74225;
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 7; continue; }
-    s.tmp_3 = r0 = s.x___44988;
-    s.tmp_5 = r0 = s.t___44978;
-    r0 = (s.y___44994 + 0.5);
+    s.tmp_3 = r0 = s.x___74219;
+    s.tmp_5 = r0 = s.t___74209;
+    r0 = (s.y___74225 + 0.5);
     s.tmp_6 = r0;
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_7 = r0;
@@ -3177,10 +3177,10 @@ switch (step) {
     r0 = (s.tmp_5 * s.tmp_8);
     s.tmp_4 = r0;
     r0 = (s.tmp_3 + s.tmp_4);
-    s.ax___45000 = (r0);
-    s.tmp_0 = r0 = s.y___44994;
-    s.tmp_2 = r0 = s.s___44984;
-    r0 = (s.ax___45000 + 0.5);
+    s.ax___74231 = (r0);
+    s.tmp_0 = r0 = s.y___74225;
+    s.tmp_2 = r0 = s.s___74215;
+    r0 = (s.ax___74231 + 0.5);
     s.tmp_3 = r0;
     r0 = pxsim_ImageMethods.width(s.arg1);
     s.tmp_4 = r0;
@@ -3191,10 +3191,10 @@ switch (step) {
     r0 = (s.tmp_2 * s.tmp_5);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 + s.tmp_1);
-    s.by___45011 = (r0);
-    s.tmp_0 = r0 = s.ax___45000;
-    s.tmp_2 = r0 = s.t___44978;
-    r0 = (s.by___45011 + 0.5);
+    s.by___74242 = (r0);
+    s.tmp_0 = r0 = s.ax___74231;
+    s.tmp_2 = r0 = s.t___74209;
+    r0 = (s.by___74242 + 0.5);
     s.tmp_3 = r0;
     r0 = pxsim_ImageMethods.height(s.arg1);
     s.tmp_4 = r0;
@@ -3205,35 +3205,35 @@ switch (step) {
     r0 = (s.tmp_2 * s.tmp_5);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 + s.tmp_1);
-    s.cx___45022 = (r0);
-    r0 = pxsim.Math_.round(s.cx___45022);
-    s.fx___45033 = (r0);
-    r0 = pxsim.Math_.round(s.by___45011);
-    s.fy___45037 = (r0);
-    s.tmp_0 = r0 = s.res___44942;
-    s.tmp_1 = r0 = s.x___44988;
-    s.tmp_2 = r0 = s.y___44994;
-    r0 = pxsim_ImageMethods.getPixel(s.arg1, s.fx___45033, s.fy___45037);
+    s.cx___74253 = (r0);
+    r0 = pxsim.Math_.round(s.cx___74253);
+    s.fx___74264 = (r0);
+    r0 = pxsim.Math_.round(s.by___74242);
+    s.fy___74268 = (r0);
+    s.tmp_0 = r0 = s.res___74173;
+    s.tmp_1 = r0 = s.x___74219;
+    s.tmp_2 = r0 = s.y___74225;
+    r0 = pxsim_ImageMethods.getPixel(s.arg1, s.fx___74264, s.fy___74268);
     s.tmp_3 = r0;
     r0 = pxsim_ImageMethods.setPixel(s.tmp_0, s.tmp_1, s.tmp_2, s.tmp_3);
-    r0 = (s.y___44994 + 1);
-    s.y___44994 = (r0);
+    r0 = (s.y___74225 + 1);
+    s.y___74225 = (r0);
     { step = 6; continue; }
   case 7:
-    r0 = (s.x___44988 + 1);
-    s.x___44988 = (r0);
+    r0 = (s.x___74219 + 1);
+    s.x___74219 = (r0);
     { step = 5; continue; }
   case 8:
-    r0 = s.res___44942;
+    r0 = s.res___74173;
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_shearRotate__P44933.info = {"start":5601,"length":1759,"line":134,"column":4,"endLine":182,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearRotate","argumentNames":["degrees","img"]}
+imagesExt_shearRotate__P74164.info = {"start":5553,"length":1759,"line":133,"column":4,"endLine":181,"endColumn":5,"fileName":"imagesExt.ts","functionName":"shearRotate","argumentNames":["degrees","img"]}
 
-function imagesExt_shearRotate__P44933_mk(s) {
+function imagesExt_shearRotate__P74164_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_shearRotate__P44933, depth: s.depth + 1,
+        parent: s, fn: imagesExt_shearRotate__P74164, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -3245,17 +3245,17 @@ function imagesExt_shearRotate__P44933_mk(s) {
   tmp_7: undefined,
   tmp_8: undefined,
   tmp_9: undefined,
-  res___44942: undefined,
-  rad___44974: undefined,
-  t___44978: undefined,
-  s___44984: undefined,
-  x___44988: undefined,
-  y___44994: undefined,
-  ax___45000: undefined,
-  by___45011: undefined,
-  cx___45022: undefined,
-  fx___45033: undefined,
-  fy___45037: undefined,
+  res___74173: undefined,
+  rad___74205: undefined,
+  t___74209: undefined,
+  s___74215: undefined,
+  x___74219: undefined,
+  y___74225: undefined,
+  ax___74231: undefined,
+  by___74242: undefined,
+  cx___74253: undefined,
+  fx___74264: undefined,
+  fy___74268: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -4486,7 +4486,7 @@ function Sprite_sx__P40024_mk(s) {
 
 
 
-function imagesExt_normalizeDegrees__P41988(s) {
+function imagesExt_normalizeDegrees__P73939(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4516,12 +4516,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imagesExt_normalizeDegrees__P41988.info = {"start":3015,"length":141,"line":62,"column":4,"endLine":64,"endColumn":5,"fileName":"imagesExt.ts","functionName":"normalizeDegrees","argumentNames":["degrees"]}
+imagesExt_normalizeDegrees__P73939.info = {"start":2967,"length":141,"line":61,"column":4,"endLine":63,"endColumn":5,"fileName":"imagesExt.ts","functionName":"normalizeDegrees","argumentNames":["degrees"]}
 
-function imagesExt_normalizeDegrees__P41988_mk(s) {
+function imagesExt_normalizeDegrees__P73939_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imagesExt_normalizeDegrees__P41988, depth: s.depth + 1,
+        parent: s, fn: imagesExt_normalizeDegrees__P73939, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -44754,7 +44754,7 @@ const sprites_BaseSpriteSayRenderer__C39913_VT = mkVTable({
   },
 });
 
-const breakpoints = setupDebugger(1, ["transparency16___42001","myImage___41997","mySprite___41998"])
+const breakpoints = setupDebugger(1, ["transparency16___42001","myImage___74914","mySprite___74917"])
 
-return _main___P56382
+return _main___P75076
 })
