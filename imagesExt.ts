@@ -21,6 +21,7 @@ namespace imagesExt {
         startAngle = startAngle || 0;
         let rotAcc = 0;
         let rot =  startAngle;
+        sprite.data.imageAngle = imageAngle;
         game.currentScene().eventContext.registerFrameHandler(scene.CONTROLLER_PRIORITY + 1, () => {
             const ctx = control.eventContext();
             const l = controller.left.isPressed();
@@ -43,7 +44,7 @@ namespace imagesExt {
                 controller.down.isPressed() ? -reverseSpeed : 
                 0;
         
-            imagesExt.SetSpriteAccelerationInDegrees(sprite, rot, acc);
+            imagesExt.setSpriteAccelerationInDegrees(sprite, rot, acc);
             sprite.data.angle = rot;
             //sprite.sayText(rot);
         });
@@ -52,14 +53,14 @@ namespace imagesExt {
     //% blockNamespace=sprites
     //% block="Get $sprite=variables_get(mySprite) angle"
     //% group="Physics"
-    export function GetSpriteAngle(sprite: Sprite): number {
+    export function getSpriteAngle(sprite: Sprite): number {
         return sprite.data.angle || 0;
     }
 
     //% blockNamespace=sprites
     //% block="Set $sprite=variables_get(mySprite) acceleration to $degrees degrees at force $force"
     //% group="Physics"
-    export function SetSpriteAccelerationInDegrees(sprite: Sprite, degrees: number, force: number): void {
+    export function setSpriteAccelerationInDegrees(sprite: Sprite, degrees: number, force: number): void {
         const rad = degrees * Math.PI / 180;
         sprite.ax = Math.cos(rad) * force;
         sprite.ay = Math.sin(rad) * force;
@@ -68,20 +69,34 @@ namespace imagesExt {
     //% blockNamespace=sprites
     //% block="Set $sprite=variables_get(mySprite) velocity to $angle degrees at velocity $velocity"
     //% group="Physics"
-    export function SetSpriteVelocityInDegrees(sprite: Sprite, angle: number, velocity: number): void {
+    export function setSpriteVelocityInDegrees(sprite: Sprite, angle: number, velocity: number): void {
         const rad = angle * Math.PI / 180;
         sprite.vx = Math.cos(rad) * velocity;
         sprite.vy = Math.sin(rad) * velocity;
     }
 
     //% blockNamespace=sprites
-    //% block="projectile $img from angled $sprite=variables_get(mySprite) at velocity $velocity"
+    //% block="projectile $img from angled $sprite=variables_get(mySprite) velocity $velocity||offset x $xOffset y $yOffset angle $angleOffset"
     //% group="Projectiles"
+    //% inlineInputMode=inline
     //% img.shadow=screen_image_picker
+    //% xOffset.defl=0
+    //% yOffset.defl=0
+    //% angleOffset.defl=0
     //% blockSetVariable=projectile
-    export function CreateProjectileAtAngleFromSprite(img: Image, sprite: Sprite, velocity: number): Sprite {
+    export function createProjectileAtAngleFromSprite(img: Image, sprite: Sprite, velocity: number, xOffset?: number, yOffset?: number, angleOffset?: number): Sprite {
+        xOffset = xOffset || 0;
+        yOffset = yOffset || 0;
+        angleOffset = angleOffset || 0;
         const proj = sprites.createProjectileFromSprite(img, sprite, 0, 0);
-        SetSpriteVelocityInDegrees(proj, GetSpriteAngle(sprite), velocity);
+        setSpriteVelocityInDegrees(proj, getSpriteAngle(sprite) + angleOffset, velocity);
+
+        const angle = getSpriteAngle(sprite) + sprite.data.imageAngle;
+
+        // Image coordinate systems have positive down, so we'll negate y
+        [xOffset, yOffset] = rotatePoint(xOffset, -yOffset, angle);
+        proj.x -= xOffset;
+        proj.y -= yOffset;
         return proj;
     }
 
@@ -95,6 +110,17 @@ namespace imagesExt {
     //% blockNamespace=math
     export function degreesToRadians(degrees: number): number {
         return degrees * Math.PI / 180;
+    }
+
+    export function rotatePoint(x: number, y: number, angle: number): number[] {
+        angle = degreesToRadians(angle);
+        const s = Math.sin(angle);
+        const c = Math.cos(angle);
+
+        const xRot = x * c - y * s;
+        const yRot = x * s + y * c;
+
+        return [xRot, yRot];
     }
 
     export enum RotationType {
