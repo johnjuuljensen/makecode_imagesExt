@@ -44,12 +44,20 @@ namespace imagesExt {
                 0;
         
             imagesExt.SetSpriteAccelerationInDegrees(sprite, rot, acc);
+            sprite.data.angle = rot;
             //sprite.sayText(rot);
         });
     }    
+    
+    //% blockNamespace=sprites
+    //% block="Get $sprite=variables_get(mySprite) angle"
+    //% group="Physics"
+    export function GetSpriteAngle(sprite: Sprite): number {
+        return sprite.data.angle || 0;
+    }
 
     //% blockNamespace=sprites
-    //% block="Set $sprite acceleration to $degrees degrees at force $force"
+    //% block="Set $sprite=variables_get(mySprite) acceleration to $degrees degrees at force $force"
     //% group="Physics"
     export function SetSpriteAccelerationInDegrees(sprite: Sprite, degrees: number, force: number): void {
         const rad = degrees * Math.PI / 180;
@@ -57,6 +65,15 @@ namespace imagesExt {
         sprite.ay = Math.sin(rad) * force;
     }
 
+    //% blockNamespace=sprites
+    //% block="Set $sprite=variables_get(mySprite) velocity to $degrees degrees at velocity $velocity"
+    //% group="Physics"
+    export function SetSpriteVelocityInDegrees(sprite: Sprite, degrees: number, velocity: number): void {
+        const rad = degrees * Math.PI / 180;
+        sprite.vx = Math.cos(rad) * velocity;
+        sprite.vy = Math.sin(rad) * velocity;
+    }
+    
     //% block
     //% blockNamespace=math
     export function normalizeDegrees(degrees: number): number {
