@@ -66,14 +66,25 @@ namespace imagesExt {
     }
 
     //% blockNamespace=sprites
-    //% block="Set $sprite=variables_get(mySprite) velocity to $degrees degrees at velocity $velocity"
+    //% block="Set $sprite=variables_get(mySprite) velocity to $angle degrees at velocity $velocity"
     //% group="Physics"
-    export function SetSpriteVelocityInDegrees(sprite: Sprite, degrees: number, velocity: number): void {
-        const rad = degrees * Math.PI / 180;
+    export function SetSpriteVelocityInDegrees(sprite: Sprite, angle: number, velocity: number): void {
+        const rad = angle * Math.PI / 180;
         sprite.vx = Math.cos(rad) * velocity;
         sprite.vy = Math.sin(rad) * velocity;
     }
-    
+
+    //% blockNamespace=sprites
+    //% block="projectile $img from angled $sprite=variables_get(mySprite) at velocity $velocity"
+    //% group="Projectiles"
+    //% img.shadow=screen_image_picker
+    //% blockSetVariable=projectile
+    export function CreateProjectileAtAngleFromSprite(img: Image, sprite: Sprite, velocity: number): Sprite {
+        const proj = sprites.createProjectileFromSprite(img, sprite, 0, 0);
+        SetSpriteVelocityInDegrees(proj, GetSpriteAngle(sprite), velocity);
+        return proj;
+    }
+
     //% block
     //% blockNamespace=math
     export function normalizeDegrees(degrees: number): number {

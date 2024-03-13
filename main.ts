@@ -1,5 +1,5 @@
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    mySprite2 = sprites.create(img`
+    projectile = imagesExt.CreateProjectileAtAngleFromSprite(img`
         ....................
         ....................
         ....................
@@ -20,12 +20,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         ....................
         ....................
         ....................
-        `, SpriteKind.Projectile)
-    mySprite2.setPosition(mySprite.x, mySprite.y)
-    imagesExt.SetSpriteVelocityInDegrees(mySprite2, imagesExt.GetSpriteAngle(mySprite), 100)
-    mySprite2.setFlag(SpriteFlag.AutoDestroy, true)
+        `, mySprite, 100)
 })
-let mySprite2: Sprite = null
+let projectile: Sprite = null
 let mySprite: Sprite = null
 scene.setBackgroundImage(storySprites.world)
 let myImage = assets.image`box`
