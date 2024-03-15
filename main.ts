@@ -117,3 +117,12 @@ mySprite.setStayInScreen(true)
 mySprite.fx = 10
 mySprite.fy = 10
 numShots = 3
+let camX = mySprite.x
+let camY = mySprite.y
+game.onUpdate(function () {
+    if (false) {
+        camX = mySprite.x + Math.constrain(mySprite.vx, 0 - scene.screenWidth() / 3, scene.screenWidth() / 3)
+        camY = mySprite.y + Math.constrain(mySprite.vy, 0 - scene.screenHeight() / 3, scene.screenHeight() / 3)
+        scene.centerCameraAt(camX, camY)
+    }
+})
